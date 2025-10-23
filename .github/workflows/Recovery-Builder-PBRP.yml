@@ -6,36 +6,27 @@ on:
       MANIFEST_BRANCH:
         description: 'Manifest Branch'
         required: true
-        default: ''
-        type: choice
-        options:
-        - android-12.1
-        - android-11.0
+        default: 'android-11.0'
       DEVICE_TREE:
         description: 'Custom Recovery Tree' # Your already made Device Tree for TWRP
         required: true
-        default: 'https://github.com/cd-Crypton/custom_recovery_tree_asus_AI2201.git'
+        default: 'https://github.com/a02-trial/android_device_samsung_a02'
       DEVICE_TREE_BRANCH:
         description: 'Custom Recovery Tree Branch' # Your Device Tree Branch, make sure it's right.
         required: true
-        default: 'Android-12'
+        default: 'A022FXXS3BWH1'
       DEVICE_PATH:
         description: 'Specify your Device Path' # As is, just like your DEVICE_PATH in your BoardConfig.mk
         required: true
-        default: 'device/asus/AI2201'
+        default: 'device/samsung/a02'
       DEVICE_NAME:
         description: 'Specify your Device Codename' # As is, just like your PRODUCT_DEVICE in your device tree.
         required: true
-        default: 'AI2201'
+        default: 'a02'
       BUILD_TARGET:
         description: 'Specify your Build Target' # Pick among boot, recovery and vendor_boot
         required: true
         default: 'recovery'
-        type: choice
-        options:
-        - boot
-        - recovery
-        - vendorboot
       LDCHECK:
         description: 'Path of blobs to check' # Use it know what kind of dependencies your missing for decryption blobs.
         required: true
