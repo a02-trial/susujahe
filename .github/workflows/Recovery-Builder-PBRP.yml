@@ -123,7 +123,7 @@ jobs:
       run: |
         cd android-recovery
         cd external/noto-fonts/other
-        wget https://github.com/cd-Crypton/custom-recovery-extras/raw/main/missing-font.zip
+        wget https://github.com/cd-Crypton/custom-recovery-extras/blob/main/missing-font.zip
         unzip -o missing-font.zip
 
     - name: Building Image
