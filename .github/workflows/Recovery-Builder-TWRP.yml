@@ -44,6 +44,8 @@ jobs:
     steps:
     - name: Check Out
       uses: actions/checkout@v4
+
+      run: git config --global url.https://${{ secrets.MY_PAT }}@github.com/.insteadOf https://github.com/
       
     - name: Display Inputs
       run: |
