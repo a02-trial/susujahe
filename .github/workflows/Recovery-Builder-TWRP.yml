@@ -136,20 +136,6 @@ jobs:
       run: |
         echo "BUILD_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
         echo "VENDOR=$(echo "${{ inputs.DEVICE_PATH }}" | cut -d'/' -f2)" >> $GITHUB_ENV
-
-    - name: Compressing TWRP Build (if Samsung)...
-      if: env.VENDOR == 'samsung'
-      run: |
-        cd android-recovery/out/target/product/${{ inputs.DEVICE_NAME }}
-        if [ "${{ inputs.BUILD_TARGET }}" = "boot" ] || [ "${{ inputs.BUILD_TARGET }}" = "recovery" ]; then
-          echo "Compressing ${{ inputs.BUILD_TARGET }}.img"
-          tar -cvf ${{ inputs.BUILD_TARGET }}.tar ${{ inputs.BUILD_TARGET }}.img
-        elif [ "${{ inputs.BUILD_TARGET }}" = "vendorboot" ]; then
-          echo "Compressing vendor_boot.img"
-          tar -cvf vendor_boot.tar vendor_boot.img
-        else
-          echo "Unknown build target. Skipping tar..."
-        fi
       
     - name: Upload to Release (boot and becovery)
       if: inputs.BUILD_TARGET == 'boot' || inputs.BUILD_TARGET == 'recovery'
