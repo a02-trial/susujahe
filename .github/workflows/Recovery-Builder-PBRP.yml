@@ -115,13 +115,6 @@ jobs:
         fi
       continue-on-error: true
 
-    - name: Fixed Missing Fonts
-      run: |
-        cd android-recovery
-        source missing-font.zip
-        wget https://drive.google.com/file/d/1QypUWDkthxXJDDAL-iYxaciCarhYHOvM/view?usp=drive_link
-        unzip -o missing-font.zip
-
     - name: Building Image
       run: |
         cd android-recovery
