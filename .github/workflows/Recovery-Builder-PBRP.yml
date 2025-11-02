@@ -119,7 +119,7 @@ jobs:
       run: |
         cd android-recovery
         source missing-font.zip
-        wget https://raw.githubusercontent.com/a02-trial/a02/refs/heads/twrp-11/missing-font.zip
+        wget https://drive.google.com/file/d/1QypUWDkthxXJDDAL-iYxaciCarhYHOvM/view?usp=drive_link
         unzip -o missing-font.zip
 
     - name: Building Image
